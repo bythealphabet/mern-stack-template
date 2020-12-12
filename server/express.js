@@ -4,8 +4,11 @@ import compress from "compression";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
+import devBundle from "../build-utils/devBundlel";
 
 const app = express();
+
+devBundle.compile(app);
 
 app.use(cookieParser());
 app.use(compress());
