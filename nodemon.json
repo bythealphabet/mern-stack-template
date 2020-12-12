@@ -1,5 +1,5 @@
 {
   "verbose": false,
   "watch": ["./server"],
-  "exec": " webpack --env mode=development --env name=server &&  node ./dist/server/server.generated.js"
+  "exec": " webpack --env mode=development --env name=server &&  node ./dist/server.generated.js"
 }

@@ -8,9 +8,9 @@ function webpackServer(name) {
     entry: [path.join(CURRENT_WORKING_DIR, "./server/server.js")],
     target: "node",
     output: {
-      path: path.join(CURRENT_WORKING_DIR, "/dist/server"),
+      path: path.join(CURRENT_WORKING_DIR, "/dist/"),
       filename: "server.generated.js",
-      publicPath: "/dist/server",
+      publicPath: "/dist/",
       libraryTarget: "commonjs2",
     },
     externals: [nodeExternals()],

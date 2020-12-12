@@ -12,10 +12,6 @@ function compile(app) {
     .then(({ compiler, publicPath }) => {
       return webpackMiddleware(compiler, {
         publicPath,
-        serverSideRender: true,
-        writeToDisk(filePath) {
-          return /dist\//.test(filePath);
-        },
       });
     })
     .then((devMiddleware) => {

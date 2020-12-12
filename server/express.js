@@ -1,4 +1,6 @@
+import path from "path";
 import express from "express";
+import render from "./helpers/renderer";
 import cookieParser from "cookie-parser";
 import compress from "compression";
 import cors from "cors";
@@ -20,6 +22,9 @@ app.use(helmet());
 app.use(cors());
 app.use(morgan("dev"));
 
-app.get("/", (req, res) => res.status(200).send("Hello World"));
+const CURRENT_WORKING_DIR = process.cwd();
+app.use("/dist", express.static(path.join(CURRENT_WORKING_DIR, "/dist")));
+
+app.get("*", render);
 
 export default app;

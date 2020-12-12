@@ -5,12 +5,11 @@ const CURRENT_WORKING_DIR = process.cwd();
 function webpackClientDevelopment(mode, name) {
   return {
     name,
-    devtool: "eval-source-map",
     entry: [path.join(CURRENT_WORKING_DIR, "/client/index.js")],
     output: {
-      path: path.join(CURRENT_WORKING_DIR, "/dist/web"),
+      path: path.join(CURRENT_WORKING_DIR, "/dist/"),
       filename: "bundle.js",
-      publicPath: "/dist/web",
+      publicPath: "/dist/",
     },
   };
 }
