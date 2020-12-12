@@ -23,8 +23,8 @@ app.use(cors());
 app.use(morgan("dev"));
 
 const CURRENT_WORKING_DIR = process.cwd();
-app.use("/dist", express.static(path.join(CURRENT_WORKING_DIR, "/dist")));
+app.use("/dist", express.static(path.join(CURRENT_WORKING_DIR, "dist")));
 
-app.get("*", render);
+app.get("/", render);
 
 export default app;

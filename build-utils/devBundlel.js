@@ -1,6 +1,6 @@
 import webpack from "webpack";
 import webpackMiddleware from "webpack-dev-middleware";
-// import webpackHotMiddleware from "webpack-hot-middleware";
+import webpackHotMiddleware from "webpack-hot-middleware";
 import webpackConfig from "../webpack.config.js";
 
 function compile(app) {
@@ -10,12 +10,17 @@ function compile(app) {
       publicPath: config.output.publicPath,
     }))
     .then(({ compiler, publicPath }) => {
-      return webpackMiddleware(compiler, {
-        publicPath,
-      });
+      return {
+        devMiddleware: webpackMiddleware(compiler, {
+          publicPath,
+        }),
+        compiler,
+      };
     })
-    .then((devMiddleware) => {
+    .then(({ devMiddleware, compiler }) => {
       app.use(devMiddleware);
+      app.use(webpackHotMiddleware(compiler));
+
       return;
     })
     .catch((error) => console.log("error in devBundle", error));
