@@ -8,7 +8,11 @@ import devBundle from "../build-utils/devBundlel";
 
 const app = express();
 
-devBundle.compile(app);
+const development = process.env.NODE_ENV === "development";
+
+if (development) {
+  devBundle.compile(app);
+}
 
 app.use(cookieParser());
 app.use(compress());

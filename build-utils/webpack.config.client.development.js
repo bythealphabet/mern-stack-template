@@ -3,7 +3,6 @@ const path = require("path");
 const CURRENT_WORKING_DIR = process.cwd();
 
 function webpackClientDevelopment(mode, name) {
-  console.log("mode client", mode);
   return {
     name,
     devtool: "eval-source-map",
