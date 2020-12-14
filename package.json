@@ -26,6 +26,7 @@
     "dev": "nodemon"
   },
   "dependencies": {
+    "@hot-loader/react-dom": "^17.0.1",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
@@ -34,7 +35,8 @@
     "is-object": "^1.0.2",
     "morgan": "^1.10.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-hot-loader": "^4.13.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

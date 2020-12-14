@@ -20,8 +20,6 @@ function compile(app) {
     .then(({ devMiddleware, compiler }) => {
       app.use(devMiddleware);
       app.use(webpackHotMiddleware(compiler));
-
-      return;
     })
     .catch((error) => console.log("error in devBundle", error));
 }
